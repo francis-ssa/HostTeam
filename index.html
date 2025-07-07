@@ -20,19 +20,65 @@
       flex-direction: column;
       align-items: center;
     }
+    .creative-spinner {
+      width: 4rem;
+      height: 4rem;
+      border: 6px solid #e0e0e0;
+      border-top: 6px solid #0d6efd;
+      border-radius: 50%;
+      animation: spin 1s linear infinite, colorchange 2s linear infinite;
+      box-shadow: 0 0 20px #0d6efd33, 0 0 40px #0d6efd22;
+      position: relative;
+    }
+    .creative-spinner::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: #0d6efd;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px #0d6efd88;
+      opacity: 0.7;
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes colorchange {
+      0% { border-top-color: #0d6efd; }
+      50% { border-top-color: #6610f2; }
+      100% { border-top-color: #0d6efd; }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.2); }
+      100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+    }
     .spinner-text {
       margin-top: 1rem;
       font-size: 1.2rem;
       color: #333;
+      letter-spacing: 0.03em;
+      font-weight: 500;
+      text-shadow: 0 1px 2px #fff8;
+      animation: textfade 2s infinite alternate;
+    }
+    @keyframes textfade {
+      0% { color: #333; }
+      100% { color: #0d6efd; }
     }
   </style>
 </head>
 <body>
   <div class="spinner-container" onclick="window.location.href='main.html'" title="Click to load main page">
-    <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
-      <span class="visually-hidden">Loading...</span>
+    <div class="creative-spinner" role="status"></div>
+    <div class="spinner-text">Click to continue<br>
+      <!-- <span style='font-size:0.9em; color:#888;'>Loading Monthly All Hands...</span> -->
     </div>
-    <div class="spinner-text">Click to continue</div>
   </div>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
