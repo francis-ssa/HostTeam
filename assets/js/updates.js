@@ -20,14 +20,18 @@ const imagePaths = [
     // 'assets/img/portfolio/21-25/8.png',
     // 'assets/img/portfolio/21-25/9.png',
 
-    'assets/img/portfolio/28-2/1.png',
-    'assets/img/portfolio/28-2/2.png',
-    'assets/img/portfolio/28-2/3.png',
-    'assets/img/portfolio/28-2/4.png',
-    'assets/img/portfolio/28-2/5.png',
-    'assets/img/portfolio/28-2/6.png',
-    'assets/img/portfolio/28-2/7.png',
-    'assets/img/portfolio/28-2/8.png',
+    // 'assets/img/portfolio/28-2/1.png',
+    // 'assets/img/portfolio/28-2/2.png',
+    // 'assets/img/portfolio/28-2/3.png',
+    // 'assets/img/portfolio/28-2/4.png',
+    // 'assets/img/portfolio/28-2/5.png',
+    // 'assets/img/portfolio/28-2/6.png',
+    // 'assets/img/portfolio/28-2/7.png',
+    // 'assets/img/portfolio/28-2/8.png',
+
+    'assets/img/portfolio/oct/1.png',
+    'assets/img/portfolio/oct/2.png',
+    'assets/img/portfolio/oct/3.png',
 ];
 
 let currentIndex = 0;
