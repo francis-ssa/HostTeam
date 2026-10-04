@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>June Monthly All-Hands</title>
+  <title>June Weekly All-Hands</title>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -933,7 +933,7 @@
     }
 
     .outro-image-wrap {
-      max-width: 700px;
+      max-width: 100%;
       margin: 0 auto;
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -989,29 +989,314 @@
       .navmenu ul li a { padding: 5px 8px; font-size: 0.65rem; }
     }
   </style>
+
+  <style>
+    :root {
+      --neo-bg: #0b1017;
+      --neo-surface: #121b28;
+      --neo-surface-strong: #1b2636;
+      --neo-card: rgba(20, 28, 39, 0.9);
+      --neo-ink: #edf3fb;
+      --neo-muted: #c4cedd;
+      --neo-accent: #e6ae86;
+      --neo-accent-2: #8ea8ff;
+      --neo-line: rgba(255, 255, 255, 0.08);
+      --neo-shadow-dark: rgba(2, 6, 12, 0.7);
+      --neo-shadow-light: rgba(255, 255, 255, 0.04);
+    }
+
+    body.index-page {
+      background: linear-gradient(180deg, #0b1017 0%, #131c2a 100%);
+      color: var(--neo-ink);
+    }
+
+    #header {
+      background: rgba(17, 24, 34, 0.82) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 999px !important;
+      box-shadow: 12px 12px 28px rgba(0, 0, 0, 0.35), -10px -10px 20px rgba(255,255,255,0.03) !important;
+      width: min(92%, 1180px);
+      margin: 20px auto 0;
+      height: auto !important;
+      padding: 10px 18px;
+      backdrop-filter: blur(18px);
+    }
+
+    .navmenu ul {
+      gap: 0.55rem;
+    }
+
+    .navmenu ul li a {
+      border-radius: 999px;
+      padding: 0.7rem 1rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(145deg, rgba(26, 35, 48, 0.9), rgba(18, 25, 35, 0.9));
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.22), -6px -6px 10px rgba(255,255,255,0.02);
+      color: var(--neo-muted);
+      transition: all 0.25s ease;
+    }
+
+    .navmenu ul li a:hover,
+    .navmenu ul li a.active {
+      background: linear-gradient(145deg, rgba(35, 45, 61, 0.96), rgba(20, 29, 39, 0.9));
+      color: var(--neo-ink);
+      box-shadow: inset 3px 3px 8px rgba(0,0,0,0.18), inset -3px -3px 8px rgba(255,255,255,0.02);
+    }
+
+    #hero {
+      background: linear-gradient(135deg, #0b1017 0%, #111b27 35%, #171f2b 100%);
+      padding-top: 128px;
+    }
+
+    #hero::before {
+      background:
+        radial-gradient(circle at 20% 30%, rgba(230,174,134,0.16), transparent 28%),
+        radial-gradient(circle at 78% 28%, rgba(142,168,255,0.14), transparent 26%),
+        radial-gradient(circle at 52% 80%, rgba(255,255,255,0.04), transparent 26%);
+    }
+
+    #hero .container {
+      background: rgba(19, 27, 38, 0.82);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 36px;
+      box-shadow: 18px 18px 32px rgba(0,0,0,0.28), -18px -18px 28px rgba(255,255,255,0.02);
+      padding: 3rem 2rem;
+    }
+
+    #hero h1,
+    .section-title,
+    #ice-breaker h1,
+    .pu-section-title,
+    .section h2,
+    .member-name,
+    .timeline-item a,
+    .improvement-label,
+    .effort-value,
+    .announcement-title,
+    .runner-up-name,
+    .eotm-name {
+      color: var(--neo-ink);
+    }
+
+    #hero p {
+      color: var(--neo-muted);
+      letter-spacing: 0.16em;
+    }
+
+    .btn-get-started {
+      border-radius: 999px;
+      background: linear-gradient(145deg, #f1a679, #e1845e);
+      color: #fff;
+      box-shadow: 10px 10px 18px rgba(225,132,94,0.2), -8px -8px 16px rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .btn-get-started:hover {
+      transform: translateY(-2px);
+      box-shadow: 12px 12px 20px rgba(225,132,94,0.25), -8px -8px 16px rgba(255,255,255,0.05);
+    }
+
+    .section {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .section-label {
+      color: var(--neo-accent);
+      letter-spacing: 0.14em;
+    }
+
+    #host-team,
+    #ice-breaker,
+    #skill-share,
+    #snr-efforts,
+    #areas-of-improvement,
+    #announcements {
+      background: transparent;
+    }
+
+    .team-member-card {
+      background: linear-gradient(145deg, rgba(17, 24, 35, 0.96), rgba(25, 34, 48, 0.9));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 28px;
+      padding: 1rem;
+      box-shadow: 14px 14px 28px rgba(0,0,0,0.2), -10px -10px 18px rgba(255,255,255,0.02);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .team-member-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 16px 16px 30px rgba(0,0,0,0.25), -10px -10px 18px rgba(255,255,255,0.02);
+    }
+
+    .member-image {
+      border-radius: 22px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    #agendas {
+      background: linear-gradient(135deg, #0c121b 0%, #141d2a 100%);
+      border-radius: 40px;
+      margin: 30px auto;
+      width: min(92%, 1200px);
+      box-shadow: 18px 18px 36px rgba(0,0,0,0.22), -10px -10px 18px rgba(255,255,255,0.02);
+    }
+
+    #agendas .section-title,
+    #agendas h2,
+    #agendas .timeline-item a,
+    #agendas .timeline-counter {
+      color: #edf3fb;
+    }
+
+    .timeline-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      margin-bottom: 12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(135deg, #f1a679, #e1845e) !important;
+      box-shadow: 0 0 0 6px rgba(225,132,94,0.12);
+    }
+
+    .question-card {
+      background: linear-gradient(145deg, rgba(20, 27, 39, 0.96), rgba(17, 24, 35, 0.92));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 30px;
+      box-shadow: 18px 18px 36px rgba(0,0,0,0.18), -14px -14px 24px rgba(255,255,255,0.02);
+    }
+
+    .pu-section {
+      background: linear-gradient(180deg, #0d141d 0%, #111b28 100%);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .pu-tab {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(145deg, rgba(25, 33, 45, 0.9), rgba(18, 25, 35, 0.9));
+      box-shadow: 8px 8px 20px rgba(0,0,0,0.18), -8px -8px 18px rgba(255,255,255,0.02);
+      color: var(--neo-muted);
+    }
+
+    .pu-tab.active {
+      background: linear-gradient(145deg, #f1a679, #e1845e);
+      color: #fff;
+      box-shadow: 12px 12px 20px rgba(225,132,94,0.18), -8px -8px 16px rgba(255,255,255,0.03);
+    }
+
+    .pu-panel-inner,
+    .effort-item,
+    .improvement-row,
+    .announce-list li,
+    .runner-up-card,
+    .eotm-image-wrap,
+    .outro-image-wrap {
+      background: linear-gradient(145deg, rgba(19, 27, 38, 0.95), rgba(17, 24, 34, 0.88));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      box-shadow: 12px 12px 24px rgba(0,0,0,0.18), -10px -10px 18px rgba(255,255,255,0.02);
+    }
+
+    .pu-category-label,
+    .effort-label,
+    .improvement-label {
+      color: var(--neo-accent);
+    }
+
+    .efforts-grid,
+    .announcement-grid {
+      gap: 1rem;
+    }
+
+    .improvement-row {
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+    }
+
+    .improvement-badge {
+      border-radius: 999px;
+      padding: 0.38rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .announcement-image img,
+    .outro-image-wrap img,
+    .eotm-image-inner img,
+    .runner-up-image-inner img {
+      border-radius: 24px;
+    }
+
+    .announce-list li {
+      padding: 1rem 1.2rem;
+      border-radius: 18px;
+      margin-bottom: 0.75rem;
+      color: #edf3fb;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .announce-list li:hover {
+      color: #ffffff !important;
+    }
+
+    .announce-dot {
+      background: linear-gradient(135deg, #f1a679, #e1845e);
+      box-shadow: 0 0 0 6px rgba(225,132,94,0.12);
+    }
+
+    #outro {
+      background: linear-gradient(135deg, #0b1017 0%, #141c29 100%);
+      border-radius: 36px;
+      width: min(92%, 1200px);
+      margin: 30px auto 80px;
+      box-shadow: 18px 18px 36px rgba(0,0,0,0.22), -8px -8px 18px rgba(255,255,255,0.02);
+    }
+
+    #outro h2,
+    #outro .section-title,
+    #outro .text-accent {
+      color: #edf3fb;
+    }
+
+    #scroll-top {
+      background: linear-gradient(145deg, #1a2333, #2a3a4e) !important;
+      border-radius: 16px !important;
+      box-shadow: 10px 10px 18px rgba(0,0,0,0.18), -6px -6px 12px rgba(255,255,255,0.04) !important;
+    }
+
+    @media (max-width: 768px) {
+      #header {
+        width: min(94%, 720px);
+      }
+
+      .navmenu ul {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .navmenu ul li a {
+        padding: 0.55rem 0.75rem;
+        font-size: 0.65rem;
+      }
+
+      #hero .container {
+        padding: 2.2rem 1.3rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-center text-center">
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#host-team">Host Team</a></li>
-          <li><a href="#agendas">Agenda</a></li>
-          <li><a href="#ice-breaker">Ice Breaker</a></li>
-          <li><a href="#project-updates">Project Updates</a></li>
-          <!-- <li><a href="#deliverables">Deliverables</a></li> -->
-          <li><a href="#snr-efforts">S&amp;R Efforts</a></li>
-          <li><a href="#eotm">Employee of the Month</a></li>
-          <li><a href="#areas-of-improvement">Areas of Improvement</a></li>
-          <li><a href="#announcements">Announcements</a></li>
-          <li><a href="#activity">Activity</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-    </div>
-  </header>
 
   <main class="main">
 
@@ -1021,7 +1306,7 @@
       <div class="container">
         <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="800">
           <div class="col-xl-7 col-lg-9 text-center">
-            <h1>Monthly<br>All Hands</h1>
+            <h1>Weekly<br>All Hands</h1>
             <p>for the Month of June</p>
             <a href="#host-team" class="btn-get-started">Get Started <i class="bi bi-arrow-down"></i></a>
           </div>
@@ -1070,14 +1355,19 @@
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <a href="#project-updates">Project Updates</a>
+            <a href="#skill-share">Skill Share</a>
             <span class="timeline-counter">02</span>
           </div>
           <!-- <div class="timeline-item">
             <div class="timeline-dot"></div>
+            <a href="#project-updates">Project Updates</a>
+            <span class="timeline-counter">02</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
             <a href="#deliverables">Deliverables</a>
             <span class="timeline-counter">03</span>
-          </div> -->
+          </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <a href="#snr-efforts">S&amp;R Efforts</a>
@@ -1092,52 +1382,65 @@
             <div class="timeline-dot"></div>
             <a href="#areas-of-improvement">Areas of Improvement</a>
             <span class="timeline-counter">06</span>
-          </div>
+          </div> -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <a href="#announcements">Announcements</a>
-            <span class="timeline-counter">07</span>
+            <span class="timeline-counter">03</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Ice Breaker -->
-    <section id="ice-breaker" class="section d-flex align-items-center justify-content-center" style="min-height: 90vh;">
+    <section id="ice-breaker" class="section d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+      <div class="container text-center">
+        <h1 class="mb-5" data-aos="fade-up">Ice Breaker</h1>
+        <p class="fs-1" data-aos="fade-up">Anong favorite mong kitchen equipment, at bakit?</p>
+        <!-- <p class="fs-5" data-aos="fade-up">
+          <i>Please get a pencil and a paper or Ipad/Tablet</i>
+        </p> -->
+      </div>
+    </section>
+
+    <section id="skill-share" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh; background: #f8f9fa;">
+      <div class="container text-center">
+        <h2 class="mb-5" data-aos="fade-up">Skillshare from..</h2>
+        <img src="assets/img/team/jason.JPG" class="img-fluid rounded mb-3" data-aos="fade-up" style="height:300px;">
+        <h4 class="mt-3" data-aos="fade-up">Jason</h4>
+      </div>
+    </section>
+
+    <!-- <section id="ice-breaker" class="section d-flex align-items-center justify-content-center" style="min-height: 90vh;">
       <div class="container text-center" style="max-width: 900px;">
         <div class="section-label">Let's warm up</div>
         <h1 data-aos="fade-up" style="font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5rem);font-weight:800;letter-spacing:-0.04em;color:var(--ink);margin-bottom:2rem;">Guess the Phrases</h1>
 
         <div data-aos="fade-up" data-aos-delay="150" style="position:relative;">
-          <!-- Nav -->
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;">
             <button id="ib-prev" style="width:52px;height:52px;border-radius:50%;background:var(--surface-card);border:1px solid var(--line);cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;transition:all .25s;" onmouseenter="this.style.background='var(--ink)';this.style.color='#fff';this.style.transform='scale(1.1)'" onmouseleave="this.style.background='var(--surface-card)';this.style.color='inherit';this.style.transform='scale(1)'">&#8592;</button>
             <span id="ib-counter" style="font-family:var(--font-display);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;color:var(--ink-muted);">1 / 10</span>
             <button id="ib-next" style="width:52px;height:52px;border-radius:50%;background:var(--surface-card);border:1px solid var(--line);cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;transition:all .25s;" onmouseenter="this.style.background='var(--ink)';this.style.color='#fff';this.style.transform='scale(1.1)'" onmouseleave="this.style.background='var(--surface-card)';this.style.color='inherit';this.style.transform='scale(1)'">&#8594;</button>
           </div>
 
-          <!-- Carousel Container -->
           <div id="ib-carousel" style="position:relative;width:100%;max-width:700px;margin:0 auto;overflow:hidden;border-radius:16px;border:1px solid var(--line);background:var(--surface-card);">
             <div id="ib-slides-wrapper" style="display:flex;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);">
-              <!-- Images will be inserted here -->
             </div>
           </div>
 
-          <!-- Dots -->
           <div id="ib-dots" style="display:flex;justify-content:center;gap:8px;margin-top:2rem;"></div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Project Updates -->
-    <section id="project-updates" class="pu-section">
+    <!-- <section id="project-updates" class="pu-section">
       <div class="pu-section-header" data-aos="fade-up">
         <div class="section-label" style="color: var(--accent-warm);">This month</div>
         <h2 class="pu-section-title">Project Updates</h2>
         <p class="pu-eyebrow">Team Wins: Deliverables</p>
       </div>
 
-        <!-- Tab Switcher -->
         <div class="pu-tabs" data-aos="fade-up" data-aos-delay="100">
           <button class="pu-tab active" data-target="pu-alpye">
             <span class="pu-tab-num">01</span>
@@ -1153,10 +1456,8 @@
           </button>
         </div>
 
-        <!-- Panels -->
         <div class="pu-panels" data-aos="fade-up" data-aos-delay="180">
 
-          <!-- Alpye -->
           <div class="pu-panel active" id="pu-alpye">
             <div class="pu-panel-inner two-col">
               <div class="pu-panel-col">
@@ -1183,7 +1484,6 @@
             </div>
           </div>
 
-          <!-- Dubai Chambers -->
           <div class="pu-panel" id="pu-dubai">
             <div class="pu-panel-inner one-col">
               <div class="pu-panel-col">
@@ -1197,7 +1497,6 @@
             </div>
           </div>
 
-          <!-- AI -->
           <div class="pu-panel" id="pu-ai">
             <div class="pu-panel-inner two-col">
               <div class="pu-panel-col">
@@ -1233,7 +1532,7 @@
           });
         });
       </script>
-    </section>
+    </section> -->
 
     <!-- Deliverables -->
     <!-- <section id="deliverables" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
@@ -1260,7 +1559,7 @@
     </section> -->
 
     <!-- S&R Efforts -->
-    <section id="snr-efforts" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
+    <!-- <section id="snr-efforts" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
           <div class="section-label">Recognition</div>
@@ -1291,16 +1590,16 @@
             <div class="effort-label">Gartic Phone</div>
             <div class="effort-value">Angelic</div>
           </div>
-          <!-- <div class="effort-item" style="grid-column: 1 / -1;">
+          <div class="effort-item" style="grid-column: 1 / -1;">
             <div class="effort-label">No Sanctions</div>
             <div class="effort-value" style="font-size:1rem; font-weight:500; color: var(--ink-soft);">Francis · Sandy · Jayna · Jason · Angelic · Sean · Lester</div>
-          </div> -->
+          </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Employee of the Month -->
-    <section id="eotm" class="section d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <!-- <section id="eotm" class="section d-flex align-items-center justify-content-center" style="min-height: 80vh;">
       <div class="container text-center" style="position:relative; z-index:1;">
         <div class="section-label" style="color: var(--accent-warm);">🏆 Spotlight</div>
         <h2 data-aos="fade-up">Employee of the Month<br>goes to...</h2>
@@ -1311,7 +1610,6 @@
         </div>
         <div class="eotm-name" data-aos="fade-up" data-aos-delay="300">Francis</div>
 
-        <!-- Runner-up Container -->
         <div class="runner-up-container" data-aos="fade-up" data-aos-delay="400">
           <div class="runner-up-card">
             <div class="runner-up-image-wrap">
@@ -1322,21 +1620,12 @@
             <div class="runner-up-label">Runner-up (120 pts.)</div>
             <div class="runner-up-name">Angelic</div>
           </div>
-          <!-- <div class="runner-up-card">
-            <div class="runner-up-image-wrap">
-              <div class="runner-up-image-inner">
-                <img src="assets/img/team/aka.png" alt="AK">
-              </div>
-            </div>
-            <div class="runner-up-label">Runner-up</div>
-            <div class="runner-up-name">AK</div>
-          </div> -->
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Areas of Improvement -->
-    <section id="areas-of-improvement" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
+    <!-- <section id="areas-of-improvement" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
           <div class="section-label">Metrics</div>
@@ -1359,13 +1648,9 @@
             <span class="improvement-label">Timesheet Errors</span>
             <span class="improvement-badge badge-ok">0 ⇨ 2</span>
           </div>
-          <!-- <div class="improvement-row">
-            <span class="improvement-label">Form Issues</span>
-            <span class="improvement-badge badge-ok">0 ⇨ 0</span>
-          </div> -->
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Announcements -->
     <section id="announcements" class="section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
@@ -1386,38 +1671,100 @@
           </div>
         </div>
         <ul class="announce-list" data-aos="fade-up" data-aos-delay="150">
+          <!-- <li>
+            <span class="announce-dot"></span>
+            June 22: Jayna's Skillshare
+          </li> -->
+          <!-- <li>
+            <span class="announce-dot"></span>
+            June 29: Jason's Skillshare
+          </li> -->
           <li>
             <span class="announce-dot"></span>
-            June 8: Francis' Skillshare
+            Vote na po sa FUTS 🤙😎
           </li>
-          <li>
-            <span class="announce-dot"></span>
-            June 15: Jayna's Skillshare
-          </li>
-          <li>
-            <span class="announce-dot"></span>
-            June 22: Jason's Skillshare
-          </li>
-          <li>
+          <!-- <li>
             <span class="announce-dot"></span>
             June 29: Sean's Skillshare
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>
 
     <!-- Activity -->
-    <section id="activity" class="section d-flex align-items-center justify-content-center" style="min-height:80vh;background:var(--ink);">
+    <!-- <section id="activity" class="section d-flex align-items-center justify-content-center" style="min-height:80vh;background:var(--ink);">
       <div class="container text-center" style="position:relative;z-index:1;">
         <h1 data-aos="zoom-in" style="font-family:var(--font-display);font-size:clamp(5rem,18vw,14rem);font-weight:800;color:#fff;letter-spacing:-0.05em;line-height:0.9;margin:0;">Activity</h1>
       </div>
-    </section>
+    </section> -->
 
     <!-- Outro -->
     <section id="outro" class="section d-flex align-items-center justify-content-center" style="min-height: 80vh;">
-      <div class="container text-center">
-        <div class="outro-image-wrap" data-aos="fade-up">
-          <img src="assets/img/team/outro.jpg" alt="Outro">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-center g-3 flex-nowrap">
+
+          <!-- Image Column -->
+          <div class="col text-center" data-aos="fade-right">
+            <div class="outro-image-wrap">
+              <img
+                src="assets/img/monday.jpg"
+                alt="Outro"
+                class="img-fluid rounded"
+              >
+            </div>
+          </div>
+
+          <div class="col text-center" data-aos="fade-right">
+            <div class="outro-image-wrap">
+              <img
+                src="assets/img/luness.jpg"
+                alt="Outro"
+                class="img-fluid rounded"
+              >
+            </div>
+          </div>
+
+          <!-- GIF Column -->
+          <div class="col text-center" data-aos="fade-left">
+            <div class="outro-image-wrap">
+              <img
+                src="assets/img/gif1.gif"
+                alt="GIF"
+                class="img-fluid rounded"
+              >
+            </div>
+          </div>
+
+          <div class="col text-center" data-aos="fade-left">
+            <div class="outro-image-wrap">
+              <img
+                src="assets/img/giphy.gif"
+                alt="GIF"
+                class="img-fluid rounded"
+              >
+            </div>
+          </div>
+
+          <div class="col text-center" data-aos="fade-left">
+            <div class="outro-image-wrap">
+              <img
+                src="assets/img/tenor.gif"
+                alt="GIF"
+                class="img-fluid rounded"
+              >
+            </div>
+          </div>
+
+          <div class="col text-center" data-aos="fade-left">
+            <div class="outro-image-wrap">
+              <img
+                src="assets/img/luness.gif"
+                alt="GIF"
+                class="img-fluid rounded"
+              >
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -40,29 +40,33 @@ const projectImage = document.getElementById('projectImage');
 const prevButton = document.getElementById('prevImage');
 const nextButton = document.getElementById('nextImage');
 
-function updateImage() {
-    projectImage.src = imagePaths[currentIndex];
-    prevButton.disabled = currentIndex === 0;
-    nextButton.disabled = currentIndex === imagePaths.length - 1;
+if (projectImage && prevButton && nextButton) {
+    function updateImage() {
+        projectImage.src = imagePaths[currentIndex];
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === imagePaths.length - 1;
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateImage();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < imagePaths.length - 1) {
+            currentIndex++;
+            updateImage();
+        }
+    });
+
+    // Reset index on modal open
+    const modal = document.getElementById('projectUpdatesModal');
+    if (modal) {
+        modal.addEventListener('show.bs.modal', () => {
+            currentIndex = 0;
+            updateImage();
+        });
+    }
 }
-
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateImage();
-    }
-});
-
-nextButton.addEventListener('click', () => {
-    if (currentIndex < imagePaths.length - 1) {
-        currentIndex++;
-        updateImage();
-    }
-});
-
-// Reset index on modal open
-const modal = document.getElementById('projectUpdatesModal');
-modal.addEventListener('show.bs.modal', () => {
-    currentIndex = 0;
-    updateImage();
-});
